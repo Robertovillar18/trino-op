@@ -8,7 +8,7 @@ WORKDIR /tmp
 
 RUN touch ${TMP}/exec.sh 
 RUN echo '#!/bin/sh' > ${TMP}/exec.sh
-RUN echo "./usr/lib/trino/bin/run-trino" >> ${TMP}/exec.sh
+RUN echo "/usr/lib/trino/bin/run-trino" >> ${TMP}/exec.sh
 RUN echo "echo 'Se inicio el servidor'" >> ${TMP}/exec.sh
 RUN echo 'tail -f /dev/null' >> ${TMP}/exec.sh
 

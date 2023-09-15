@@ -12,5 +12,5 @@ RUN echo "echo 'Se inicio el servidor'" >> ${TMP}/exec.sh
 RUN echo 'tail -f /dev/null' >> ${TMP}/exec.sh
 
 RUN chmod +x ${TMP}/exec.sh
-RUN chmod +x ${TRPATH}
+RUN chmod -R 755 ${TRPATH}
 ENTRYPOINT $(echo ${TMP}/exec.sh)

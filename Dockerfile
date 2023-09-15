@@ -1,6 +1,7 @@
 FROM trinodb/trino:latest
 
 ENV TMP=/tmp
+ENV TRPATH=/usr/lib/trino
 WORKDIR /tmp
 
 RUN touch ${TMP}/exec.sh 
@@ -11,4 +12,5 @@ RUN echo "echo 'Se inicio el servidor'" >> ${TMP}/exec.sh
 RUN echo 'tail -f /dev/null' >> ${TMP}/exec.sh
 
 RUN chmod +x ${TMP}/exec.sh
+RUN chmod +x ${TRPATH}
 ENTRYPOINT $(echo ${TMP}/exec.sh)
